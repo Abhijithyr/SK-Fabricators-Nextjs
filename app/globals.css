@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+html { scroll-behavior: smooth; }
+body { margin: 0; }
+button, a, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
