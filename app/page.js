@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { 
   Shield, 
   Wrench, 
@@ -11,19 +11,15 @@ import {
   Mail, 
   MapPin, 
   CheckCircle2, 
-  Star, 
   Send, 
   Menu, 
   X, 
   ArrowRight, 
   Compass, 
-  Award, 
-  Clock, 
   Maximize2,
   Building,
   Hammer,
   MessageSquare,
-  Zap,
   Check
 } from 'lucide-react';
 
@@ -359,8 +355,72 @@ export default function App() {
   const [selectedProject, setSelectedProject] = useState(null);
   
   // Contact Form State
-  const [contactForm, setContactForm] = useState({ name: '', phone: '', service: 'Gates', message: '' });
+
+  const [contactForm, setContactForm] = useState({
+    name: "",
+    phone: "",
+    service: "Gates",
+    message: "",
+  });
+
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [result, setResult] = useState("");
+
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+
+    setSubmitting(true);
+    setResult("");
+
+    const formData = new FormData(event.target);
+
+    // Web3Forms Access Key
+    formData.append(
+      "access_key",
+      "4022aa6a-ccc3-422a-bc18-d04ec12dac6b"
+    );
+
+    // Optional email subject
+    formData.append(
+      "subject",
+      `New Website Inquiry - ${contactForm.service}`
+    );
+
+    try {
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.success) {
+        setFormSubmitted(true);
+        setResult("");
+
+        setContactForm({
+          name: "",
+          phone: "",
+          service: "Gates",
+          message: "",
+        });
+      } else {
+        setResult("Something went wrong. Please try again.");
+      }
+    } catch (error) {
+      console.error("Web3Forms Error:", error);
+      setResult("Something went wrong. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+  
+  // const [contactForm, setContactForm] = useState({ name: '', phone: '', service: 'Gates', message: '' });
+  // const [formSubmitted, setFormSubmitted] = useState(false);
 
   // Filtered Portfolio Logic
   const filteredPortfolio = useMemo(() => {
@@ -368,15 +428,15 @@ export default function App() {
     return PORTFOLIO_ITEMS.filter(item => item.category === activeCategory);
   }, [activeCategory]);
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    if (!contactForm.name || !contactForm.phone) return;
-    setFormSubmitted(true);
-    setTimeout(() => {
-      setFormSubmitted(false);
-      setContactForm({ name: '', phone: '', service: 'Gates', message: '' });
-    }, 4500);
-  };
+  // const handleFormSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (!contactForm.name || !contactForm.phone) return;
+  //   setFormSubmitted(true);
+  //   setTimeout(() => {
+  //     setFormSubmitted(false);
+  //     setContactForm({ name: '', phone: '', service: 'Gates', message: '' });
+  //   }, 4500);
+  // };
 
   const openWhatsApp = (customMsg) => {
     const defaultText = "Hi SK Fabricators! I would like to get a quote/design discussion for my project.";
@@ -1017,6 +1077,164 @@ export default function App() {
 
             {/* Inquiry Form */}
             <div className="lg:col-span-7 bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-xl">
+      <h3 className="text-xl font-bold text-white mb-6">
+        Send Us a Message
+      </h3>
+
+      {formSubmitted ? (
+        <div className="p-8 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-center space-y-3 animate-fade-in">
+          <CheckCircle2 className="w-12 h-12 text-amber-400 mx-auto" />
+
+          <div className="text-lg font-bold">
+            Inquiry Sent Successfully!
+          </div>
+
+          <p className="text-xs text-slate-300">
+            Thank you for contacting us. Our fabrication expert will get
+            back to you shortly.
+          </p>
+
+          <button
+            type="button"
+            onClick={() => setFormSubmitted(false)}
+            className="mt-4 px-5 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold hover:bg-amber-400 transition-colors"
+          >
+            Send Another Inquiry
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleFormSubmit} className="space-y-4">
+
+          {/* Name & Phone */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+            <div>
+              <label className="block text-xs font-semibold text-slate-400 mb-1">
+                Your Name *
+              </label>
+
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="Enter your Name"
+                value={contactForm.name}
+                onChange={(e) =>
+                  setContactForm({
+                    ...contactForm,
+                    name: e.target.value,
+                  })
+                }
+                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-semibold text-slate-400 mb-1">
+                Phone / Mobile *
+              </label>
+
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder="+91 xxxxxxxxxx"
+                value={contactForm.phone}
+                onChange={(e) =>
+                  setContactForm({
+                    ...contactForm,
+                    phone: e.target.value,
+                  })
+                }
+                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+              />
+            </div>
+
+          </div>
+
+          {/* Service */}
+          <div>
+            <label className="block text-xs font-semibold text-slate-400 mb-1">
+              Service Required
+            </label>
+
+            <select
+              name="service"
+              value={contactForm.service}
+              onChange={(e) =>
+                setContactForm({
+                  ...contactForm,
+                  service: e.target.value,
+                })
+              }
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+            >
+              <option value="Gates">
+                Custom Gates & Automatic Systems
+              </option>
+
+              <option value="Petrol Bunks">
+                Petrol Bunk Canopy Cladding & Branding
+              </option>
+
+              <option value="Exteriors">
+                Outside Architectural Louvers & Facades
+              </option>
+
+              <option value="Signage">
+                3D LED Boards & Corporate Pylons
+              </option>
+
+              <option value="Multiple Works">
+                Multiple / Entire Project Fabrication
+              </option>
+            </select>
+          </div>
+
+          {/* Message */}
+          <div>
+            <label className="block text-xs font-semibold text-slate-400 mb-1">
+              Project Details / Message *
+            </label>
+
+            <textarea
+              name="message"
+              rows={4}
+              required
+              placeholder="Specify gate dimensions, petrol station canopy requirements, site location, or custom designs..."
+              value={contactForm.message}
+              onChange={(e) =>
+                setContactForm({
+                  ...contactForm,
+                  message: e.target.value,
+                })
+              }
+              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+            />
+          </div>
+
+          {/* Error Message */}
+          {result && (
+            <p className="text-sm text-red-400 text-center">
+              {result}
+            </p>
+          )}
+
+          {/* Submit */}
+          <button
+            type="submit"
+            disabled={submitting}
+            className="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30"
+          >
+            <Send className="w-4 h-4" />
+
+            {submitting ? "Sending..." : "Submit Inquiry"}
+          </button>
+
+        </form>
+      )}
+    </div>
+            {/* <div className="lg:col-span-7 bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-xl">
               <h3 className="text-xl font-bold text-white mb-6">Send Us a Message</h3>
 
               {formSubmitted ? (
@@ -1088,7 +1306,7 @@ export default function App() {
                   </button>
                 </form>
               )}
-            </div>
+            </div> */}
 
           </div>
 
