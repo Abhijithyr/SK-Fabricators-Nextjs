@@ -930,6 +930,90 @@ export default function App() {
 
 
       {/* --- WHY CHOOSE SK FABRICATORS SECTION --- */}
+      <section
+        id="why-us"
+        className="py-20 bg-slate-900 border-t border-slate-800/80"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Section Heading */}
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <span className="text-xs font-bold text-amber-500 uppercase tracking-widest bg-amber-500/10 px-3.5 py-1.5 rounded-full border border-amber-500/20">
+              Why Choose SK Fabricators
+            </span>
+
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+              Quality Work. Strong Results. Professional Finish.
+            </h2>
+
+            <p className="text-slate-400 text-sm sm:text-base leading-relaxed">
+              We combine practical design, skilled fabrication and careful
+              installation to deliver reliable solutions for residential,
+              commercial and infrastructure projects.
+            </p>
+          </div>
+
+          {/* Core Feature Pillars */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            {/* Card 1 */}
+            <div className="bg-slate-950 rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                <Hammer className="w-5 h-5" />
+              </div>
+
+              <h3 className="text-lg font-bold text-white">
+                Skilled Fabrication
+              </h3>
+
+              <p className="text-xs text-slate-400 leading-relaxed">
+                From custom gates and metal structures to exterior fabrication,
+                we focus on accurate work, strong construction and a clean
+                finished appearance.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-slate-950 rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                <Building className="w-5 h-5" />
+              </div>
+
+              <h3 className="text-lg font-bold text-white">
+                Complete Project Solutions
+              </h3>
+
+              <p className="text-xs text-slate-400 leading-relaxed">
+                We handle a range of requirements including petrol bunk
+                structures, exterior designs, glass glazing and signage,
+                helping clients manage multiple fabrication needs in one place.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-slate-950 rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-4">
+              <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
+                <Shield className="w-5 h-5" />
+              </div>
+
+              <h3 className="text-lg font-bold text-white">
+                Quality & Reliable Execution
+              </h3>
+
+              <p className="text-xs text-slate-400 leading-relaxed">
+                We pay attention to material selection, finishing and installation
+                to create solutions that are practical, durable and suited to
+                the requirements of each project.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      {/* --- WHY CHOOSE SK FABRICATORS SECTION ---
       <section id="why-us" className="py-20 bg-slate-900 border-t border-slate-800/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
@@ -945,26 +1029,9 @@ export default function App() {
             </p>
           </div>
 
-          {/* Stats Counters Grid */}
-          {/* <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {STATS.map((stat, idx) => {
-              const IconComp = stat.icon;
-              return (
-                <div 
-                  key={idx}
-                  className="bg-slate-950 rounded-2xl border border-slate-800 p-6 text-center space-y-3 hover:border-amber-500/30 transition-all duration-300"
-                >
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mx-auto">
-                    <IconComp className="w-5 h-5" />
-                  </div>
-                  <div className="text-3xl sm:text-4xl font-black text-white font-mono">{stat.value}</div>
-                  <div className="text-xs text-slate-400 font-medium">{stat.label}</div>
-                </div>
-              );
-            })}
-          </div> */}
+          
 
-          {/* Core Feature Pillars */}
+          // Core Feature Pillars 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-slate-950 rounded-2xl border border-slate-800 p-6 sm:p-8 space-y-4">
               <div className="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400">
@@ -998,7 +1065,7 @@ export default function App() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
 
       {/* --- CONTACT & INQUIRY SECTION --- */}
@@ -1319,7 +1386,7 @@ export default function App() {
           
           <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7773.927704056118!2d77.7124323594382!3d13.03797291871028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11fe770bf7ad%3A0x8f1454828f0bd4d7!2sSkfabricators!5e0!3m2!1sen!2sin!4v1793088613306!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3072.1714219626388!2d77.72117237507754!3d13.033715187287383!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTPCsDAyJzAxLjQiTiA3N8KwNDMnMjUuNSJF!5e1!3m2!1sen!2sin!4v1793352287699!5m2!1sen!2sin"
               className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px]"
               style={{ border: 0 }}
               allowFullScreen
