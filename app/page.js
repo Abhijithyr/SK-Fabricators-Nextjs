@@ -86,7 +86,7 @@ const SERVICES_DATA = [
   },
 
   {
-    id: "outside-interiors",
+    id: "outside-exteriors",
     title: "Architectural Exteriors & Louvers",
     icon: Layout,
     shortDesc:
@@ -181,98 +181,98 @@ const SERVICES_DATA = [
 
 const PORTFOLIO_ITEMS = [
   {
-    id: 1,
-    title: "Automated Laser-Cut Villa Main Gate",
-    category: "gates",
-    categoryLabel: "Custom Gates",
-    client: "Residential Project",
-    image: "/images/gates.jpeg",
-    description:
-      "Custom fabricated main entrance gate designed and manufactured by SK Fabricators.",
-    highlights: [
-      "Heavy Duty Structure",
-      "Custom Design",
-      "Weather Resistant Finish",
-    ],
-  },
+  id: 1,
+  title: "Modern Residential Main Gate",
+  category: "gates",
+  categoryLabel: "Custom Gates",
+  client: "Residential Project",
+  image: "/images/Gates-2.jpeg",
+  description:
+    "Custom residential main gate featuring a strong metal frame, wood-finish panels and a clean modern design for a stylish home entrance.",
+  highlights: [
+    "Metal Frame Structure",
+    "Wood-Finish Panels",
+    "Modern Design",
+  ],
+},
 
   {
-    id: 2,
-    title: "Commercial Petrol Bunk Canopy",
-    category: "petrol-bunks",
-    categoryLabel: "Petrol Bunks",
-    client: "Fuel Station Project",
-    image: "/images/petrol.jpeg",
-    description:
-      "Petrol bunk canopy fabrication and exterior finishing completed by our team.",
-    highlights: [
-      "ACP Cladding",
-      "Structural Fabrication",
-      "Exterior Lighting",
-    ],
-  },
+  id: 2,
+  title: "MRPL Petrol Bunk Canopy",
+  category: "petrol-bunks",
+  categoryLabel: "Petrol Bunks",
+  client: "MRPL Fuel Station",
+  image: "/images/petrol-1.jpeg",
+  description:
+    "Petrol bunk canopy and exterior works completed for an MRPL fuel station, featuring a strong structural design, branded cladding and a clean professional finish.",
+  highlights: [
+    "Canopy Structure",
+    "ACP Cladding",
+    "Exterior Finishing",
+  ],
+},
 
   {
     id: 3,
-    title: "Modern Exterior Louvers",
-    category: "outside-interiors",
-    categoryLabel: "Outside Interiors",
-    client: "Commercial Project",
-    image: "/images/exterior.jpeg",
+    title: "Provident Deansgate Exterior Elevation",
+    category: "outside-exteriors",
+    categoryLabel: "Outside Exteriors",
+    client: "Provident Deansgate",
+    image: "/images/Exterior Design-3.jpeg",
     description:
-      "Modern exterior elevation completed using durable architectural materials.",
+      "Modern multi-story residential elevation featuring exposed brick cladding, white render, vertical louvers, and large framed glass windows.",
     highlights: [
-      "Modern Elevation",
-      "Weather Resistant",
-      "Custom Fabrication",
+      "Terracotta Brick Cladding",
+      "Vertical Dark Louvers",
+      "Modern Architectural Elevation",
     ],
   },
 
   {
     id: 4,
-    title: "3D LED Signage",
+    title: "Large LED Display Billboard",
     category: "signage",
     categoryLabel: "Signage & Boards",
     client: "Commercial Project",
-    image: "/images/image1.jpeg",
+    image: "/images/signboardled.jpeg",
     description:
-      "Custom fabricated signage with modern LED illumination.",
+      "Large rooftop outdoor digital LED screen display mounted on a custom structural steel frame with integrated branding[cite: 2].",
     highlights: [
-      "3D Lettering",
-      "LED Lighting",
-      "Custom Design",
+      "Digital Billboard",
+      "Structural Steel Frame",
+      "Outdoor LED Display",
     ],
   },
 
   {
     id: 5,
-    title: "Heavy Duty Main Gate",
-    category: "gates",
-    categoryLabel: "Custom Gates",
-    client: "Residential Project",
-    image: "/images/gates.jpeg",
+    title: "Bharat Petroleum Fuel Station Canopy",
+    category: "petrol-bunks",
+    categoryLabel: "Petrol Bunks",
+    client: "Bharat Petroleum",
+    image: "/images/petrol-5.jpeg",
     description:
-      "Heavy duty fabricated entrance gate with premium finishing.",
+      "Modern commercial fuel station canopy and structural fabrication featuring vibrant LED accent lighting and brand signage[cite: 3].",
     highlights: [
-      "Heavy Duty Steel",
-      "Premium Finish",
-      "Custom Size",
+      "Canopy Structure",
+      "LED Strip Lighting",
+      "Brand Signage Integration",
     ],
   },
 
   {
     id: 6,
-    title: "Steel Pergola & Exterior Work",
-    category: "outside-interiors",
-    categoryLabel: "Outside Interiors",
+    title: "Residence Exterior Elevation",
+    category: "outside-exteriors",
+    categoryLabel: "Outside Exteriors",
     client: "Residential Project",
-    image: "/images/image2.jpeg",
+    image: "/images/Exterior Design.jpeg",
     description:
-      "Custom structural steel pergola designed for outdoor spaces.",
+      "Modern multi-story residential exterior elevation featuring vertical and horizontal louvers, wood panel cladding, and rooftop landscaping[cite: 4].",
     highlights: [
-      "Structural Steel",
-      "Custom Fabrication",
-      "Outdoor Finish",
+      "Modern Architectural Elevation",
+      "Vertical & Horizontal Louvers",
+      "Rooftop Landscaping",
     ],
   },
 ];
@@ -793,7 +793,7 @@ export default function App() {
                 { id: 'all', label: 'All Projects' },
                 { id: 'gates', label: 'Gates' },
                 { id: 'petrol-bunks', label: 'Petrol Bunks' },
-                { id: 'outside-interiors', label: 'Exteriors' },
+                { id: 'outside-exteriors', label: 'Exteriors' },
                 { id: 'signage', label: 'Signage & Boards' }
               ].map(tab => (
                 <button
