@@ -418,7 +418,7 @@ export default function App() {
       setSubmitting(false);
     }
   };
-  
+
   // const [contactForm, setContactForm] = useState({ name: '', phone: '', service: 'Gates', message: '' });
   // const [formSubmitted, setFormSubmitted] = useState(false);
 
@@ -1077,163 +1077,163 @@ export default function App() {
 
             {/* Inquiry Form */}
             <div className="lg:col-span-7 bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-xl">
-      <h3 className="text-xl font-bold text-white mb-6">
-        Send Us a Message
-      </h3>
+              <h3 className="text-xl font-bold text-white mb-6">
+                Send Us a Message
+              </h3>
 
-      {formSubmitted ? (
-        <div className="p-8 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-center space-y-3 animate-fade-in">
-          <CheckCircle2 className="w-12 h-12 text-amber-400 mx-auto" />
+              {formSubmitted ? (
+                <div className="p-8 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-400 text-center space-y-3 animate-fade-in">
+                  <CheckCircle2 className="w-12 h-12 text-amber-400 mx-auto" />
 
-          <div className="text-lg font-bold">
-            Inquiry Sent Successfully!
-          </div>
+                  <div className="text-lg font-bold">
+                    Inquiry Sent Successfully!
+                  </div>
 
-          <p className="text-xs text-slate-300">
-            Thank you for contacting us. Our fabrication expert will get
-            back to you shortly.
-          </p>
+                  <p className="text-xs text-slate-300">
+                    Thank you for contacting us. Our fabrication expert will get
+                    back to you shortly.
+                  </p>
 
-          <button
-            type="button"
-            onClick={() => setFormSubmitted(false)}
-            className="mt-4 px-5 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold hover:bg-amber-400 transition-colors"
-          >
-            Send Another Inquiry
-          </button>
-        </div>
-      ) : (
-        <form onSubmit={handleFormSubmit} className="space-y-4">
+                  <button
+                    type="button"
+                    onClick={() => setFormSubmitted(false)}
+                    className="mt-4 px-5 py-2 rounded-lg bg-amber-500 text-slate-950 text-xs font-bold hover:bg-amber-400 transition-colors"
+                  >
+                    Send Another Inquiry
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleFormSubmit} className="space-y-4">
 
-          {/* Name & Phone */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Name & Phone */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 
-            <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">
-                Your Name *
-              </label>
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-400 mb-1">
+                        Your Name *
+                      </label>
 
-              <input
-                type="text"
-                name="name"
-                required
-                placeholder="Enter your Name"
-                value={contactForm.name}
-                onChange={(e) =>
-                  setContactForm({
-                    ...contactForm,
-                    name: e.target.value,
-                  })
-                }
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
-              />
+                      <input
+                        type="text"
+                        name="name"
+                        required
+                        placeholder="Enter your Name"
+                        value={contactForm.name}
+                        onChange={(e) =>
+                          setContactForm({
+                            ...contactForm,
+                            name: e.target.value,
+                          })
+                        }
+                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-xs font-semibold text-slate-400 mb-1">
+                        Phone / Mobile *
+                      </label>
+
+                      <input
+                        type="tel"
+                        name="phone"
+                        required
+                        placeholder="+91 xxxxxxxxxx"
+                        value={contactForm.phone}
+                        onChange={(e) =>
+                          setContactForm({
+                            ...contactForm,
+                            phone: e.target.value,
+                          })
+                        }
+                        className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+                      />
+                    </div>
+
+                  </div>
+
+                  {/* Service */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-400 mb-1">
+                      Service Required
+                    </label>
+
+                    <select
+                      name="service"
+                      value={contactForm.service}
+                      onChange={(e) =>
+                        setContactForm({
+                          ...contactForm,
+                          service: e.target.value,
+                        })
+                      }
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+                    >
+                      <option value="Gates">
+                        Custom Gates & Automatic Systems
+                      </option>
+
+                      <option value="Petrol Bunks">
+                        Petrol Bunk Canopy Cladding & Branding
+                      </option>
+
+                      <option value="Exteriors">
+                        Outside Architectural Louvers & Facades
+                      </option>
+
+                      <option value="Signage">
+                        3D LED Boards & Corporate Pylons
+                      </option>
+
+                      <option value="Multiple Works">
+                        Multiple / Entire Project Fabrication
+                      </option>
+                    </select>
+                  </div>
+
+                  {/* Message */}
+                  <div>
+                    <label className="block text-xs font-semibold text-slate-400 mb-1">
+                      Project Details / Message *
+                    </label>
+
+                    <textarea
+                      name="message"
+                      rows={4}
+                      required
+                      placeholder="Specify gate dimensions, petrol station canopy requirements, site location, or custom designs..."
+                      value={contactForm.message}
+                      onChange={(e) =>
+                        setContactForm({
+                          ...contactForm,
+                          message: e.target.value,
+                        })
+                      }
+                      className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
+                    />
+                  </div>
+
+                  {/* Error Message */}
+                  {result && (
+                    <p className="text-sm text-red-400 text-center">
+                      {result}
+                    </p>
+                  )}
+
+                  {/* Submit */}
+                  <button
+                    type="submit"
+                    disabled={submitting}
+                    className="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30"
+                  >
+                    <Send className="w-4 h-4" />
+
+                    {submitting ? "Sending..." : "Submit Inquiry"}
+                  </button>
+
+                </form>
+              )}
             </div>
-
-            <div>
-              <label className="block text-xs font-semibold text-slate-400 mb-1">
-                Phone / Mobile *
-              </label>
-
-              <input
-                type="tel"
-                name="phone"
-                required
-                placeholder="+91 xxxxxxxxxx"
-                value={contactForm.phone}
-                onChange={(e) =>
-                  setContactForm({
-                    ...contactForm,
-                    phone: e.target.value,
-                  })
-                }
-                className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
-              />
-            </div>
-
-          </div>
-
-          {/* Service */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">
-              Service Required
-            </label>
-
-            <select
-              name="service"
-              value={contactForm.service}
-              onChange={(e) =>
-                setContactForm({
-                  ...contactForm,
-                  service: e.target.value,
-                })
-              }
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
-            >
-              <option value="Gates">
-                Custom Gates & Automatic Systems
-              </option>
-
-              <option value="Petrol Bunks">
-                Petrol Bunk Canopy Cladding & Branding
-              </option>
-
-              <option value="Exteriors">
-                Outside Architectural Louvers & Facades
-              </option>
-
-              <option value="Signage">
-                3D LED Boards & Corporate Pylons
-              </option>
-
-              <option value="Multiple Works">
-                Multiple / Entire Project Fabrication
-              </option>
-            </select>
-          </div>
-
-          {/* Message */}
-          <div>
-            <label className="block text-xs font-semibold text-slate-400 mb-1">
-              Project Details / Message *
-            </label>
-
-            <textarea
-              name="message"
-              rows={4}
-              required
-              placeholder="Specify gate dimensions, petrol station canopy requirements, site location, or custom designs..."
-              value={contactForm.message}
-              onChange={(e) =>
-                setContactForm({
-                  ...contactForm,
-                  message: e.target.value,
-                })
-              }
-              className="w-full bg-slate-950 border border-slate-800 rounded-xl px-4 py-3 text-sm text-white focus:border-amber-500 focus:outline-none transition-colors"
-            />
-          </div>
-
-          {/* Error Message */}
-          {result && (
-            <p className="text-sm text-red-400 text-center">
-              {result}
-            </p>
-          )}
-
-          {/* Submit */}
-          <button
-            type="submit"
-            disabled={submitting}
-            className="w-full py-4 rounded-xl bg-amber-500 hover:bg-amber-400 disabled:opacity-60 disabled:cursor-not-allowed text-slate-950 font-bold text-sm uppercase tracking-wider transition-all flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 hover:shadow-amber-500/30"
-          >
-            <Send className="w-4 h-4" />
-
-            {submitting ? "Sending..." : "Submit Inquiry"}
-          </button>
-
-        </form>
-      )}
-    </div>
             {/* <div className="lg:col-span-7 bg-slate-900 rounded-3xl border border-slate-800 p-8 shadow-xl">
               <h3 className="text-xl font-bold text-white mb-6">Send Us a Message</h3>
 
@@ -1308,6 +1308,25 @@ export default function App() {
               )}
             </div> */}
 
+          </div>
+
+        </div>
+      </section>
+
+      {/* --- LOCATION MAP SECTION --- */}
+      <section className="w-full bg-slate-950 py-12 sm:py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7773.927704056118!2d77.7124323594382!3d13.03797291871028!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae11fe770bf7ad%3A0x8f1454828f0bd4d7!2sSkfabricators!5e0!3m2!1sen!2sin!4v1793088613306!5m2!1sen!2sin"
+              className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px]"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="SK Fabricators Location"
+            />
           </div>
 
         </div>
