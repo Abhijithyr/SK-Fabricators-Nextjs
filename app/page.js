@@ -202,7 +202,7 @@ const PORTFOLIO_ITEMS = [
   category: "petrol-bunks",
   categoryLabel: "Petrol Bunks",
   client: "MRPL Fuel Station",
-  image: "/images/petrol-1.jpeg",
+  image: "/images/Petrol-1.jpeg",
   description:
     "Petrol bunk canopy and exterior works completed for an MRPL fuel station, featuring a strong structural design, branded cladding and a clean professional finish.",
   highlights: [
@@ -250,7 +250,7 @@ const PORTFOLIO_ITEMS = [
     category: "petrol-bunks",
     categoryLabel: "Petrol Bunks",
     client: "Bharat Petroleum",
-    image: "/images/petrol-5.jpeg",
+    image: "/images/Petrol-5.jpeg",
     description:
       "Modern commercial fuel station canopy and structural fabrication featuring vibrant LED accent lighting and brand signage[cite: 3].",
     highlights: [
@@ -559,7 +559,7 @@ export default function App() {
 
 
       {/* --- HERO SECTION --- */}
-      <section className="relative overflow-hidden pt-12 pb-20 md:py-28 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <section className="relative overflow-hidden pt-8 pb-14 md:py-22 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
         
         {/* Subtle background glow elements */}
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-amber-500/10 rounded-full blur-[120px] pointer-events-none animate-pulse-glow" />
@@ -643,6 +643,59 @@ export default function App() {
                   {/* Card Image Banner */}
                   <div className="relative h-64 rounded-2xl overflow-hidden group">
                     <img 
+                      src="/images/Exterior Design.jpeg" 
+                      alt="Provident Deansgate Exterior Elevation"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent" />
+                    
+                    <div className="absolute top-3 right-3 px-3 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-amber-400 text-xs font-bold border border-amber-500/30">
+                      Signature Design
+                    </div>
+
+                    <div className="absolute bottom-4 left-4 right-4 text-left">
+                      <span className="text-xs font-semibold text-amber-400 uppercase tracking-wider">Outside Exteriors</span>
+                      <h3 className="text-lg font-bold text-white leading-tight">Provident Deansgate Exterior Elevation</h3>
+                    </div>
+                  </div>
+
+                  {/* Highlights checklist */}
+                  <div className="space-y-3">
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                      <Shield className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="text-xs font-bold text-slate-200">Terracotta Brick Cladding</h4>
+                        <p className="text-[11px] text-slate-400">Modern multi-story residential elevation featuring exposed brickwork.</p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800">
+                      <Wrench className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
+                      <div>
+                        <h4 className="text-xs font-bold text-slate-200">Vertical Dark Louvers</h4>
+                        <p className="text-[11px] text-slate-400">Custom architectural metal and louver fabrication details.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Quick WhatsApp Action Button */}
+                  <button 
+                    onClick={() => openWhatsApp("Hi SK Fabricators! I saw your Provident Deansgate exterior elevation design and want to discuss custom pricing.")}
+                    className="w-full py-3.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-400 text-xs font-bold flex items-center justify-center gap-2 transition-all hover:border-emerald-500/60"
+                  >
+                    <MessageSquare className="w-4 h-4 text-emerald-400" />
+                    <span>Inquire About This Design</span>
+                  </button>
+
+                </div>
+              </div>
+            </div>
+            {/* <div className="lg:col-span-5 relative">
+              <div className="relative rounded-3xl p-1 bg-gradient-to-b from-amber-500/30 via-slate-800 to-slate-900 shadow-2xl animate-float">
+                <div className="bg-slate-900 rounded-[22px] overflow-hidden p-6 space-y-6">
+                  
+                  <div className="relative h-64 rounded-2xl overflow-hidden group">
+                    <img 
                       src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" 
                       alt="SK Fabricators Designer Gate Work"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
@@ -659,7 +712,6 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Highlights checklist */}
                   <div className="space-y-3">
                     <div className="flex items-start gap-3 p-3 rounded-xl bg-slate-950/60 border border-slate-800">
                       <Shield className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
@@ -678,7 +730,6 @@ export default function App() {
                     </div>
                   </div>
 
-                  {/* Quick WhatsApp Action Button */}
                   <button 
                     onClick={() => openWhatsApp("Hi SK Fabricators! I saw your signature laser-cut gate design and want to discuss custom pricing.")}
                     className="w-full py-3.5 rounded-xl bg-emerald-600/20 hover:bg-emerald-600/30 border border-emerald-500/40 text-emerald-400 text-xs font-bold flex items-center justify-center gap-2 transition-all hover:border-emerald-500/60"
@@ -689,7 +740,7 @@ export default function App() {
 
                 </div>
               </div>
-            </div>
+            </div> */}
 
           </div>
         </div>
@@ -1381,7 +1432,7 @@ export default function App() {
       </section>
 
       {/* --- LOCATION MAP SECTION --- */}
-      <section className="w-full bg-slate-950 py-12 sm:py-16">
+      {/* <section className="w-full bg-slate-950 py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="overflow-hidden rounded-2xl border border-slate-800 shadow-xl">
@@ -1397,7 +1448,7 @@ export default function App() {
           </div>
 
         </div>
-      </section>
+      </section> */}
 
 
       {/* --- FOOTER --- */}
